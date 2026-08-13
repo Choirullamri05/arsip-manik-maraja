@@ -16,10 +16,13 @@
     <div id="footer-container"></div>
 
     <script type="module">
-        import { renderHeader } from './src/components/Header.js';
+        import { renderHeader, initHeaderEvents } from './src/components/Header.js';
         import { renderFooter } from './src/components/Footer.js';
 
-        document.getElementById('header-container').innerHTML = renderHeader();
+        // 1. Render HTML Header (parameter 'beranda' membuat menu beranda aktif)
+        document.getElementById('header-container').innerHTML = renderHeader('beranda');
+        initHeaderEvents();
+        
         document.getElementById('footer-container').innerHTML = renderFooter();
     </script>
 </body>

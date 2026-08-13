@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visi & Misi - Desa Manik Maraja</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 flex flex-col min-h-screen">
+    <div id="header-container"></div>
+
+    <main class="max-w-4xl mx-auto px-4 py-8 flex-grow">
+        <div class="bg-white p-6 md:p-8 rounded-xl shadow-sm border border-gray-100 space-y-8">
+            <h1 class="text-3xl font-bold text-gray-800 border-b pb-4">Visi & Misi Desa</h1>
+
+            <div class="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-600">
+                <h2 class="text-xl font-bold text-blue-900 mb-2">VISI DESA</h2>
+                <p class="text-gray-700 italic text-lg">
+                    "Mewujudkan Desa Manik Maraja yang Mandiri, Sejahtera, Transparan, dan Berdaya Saing Berbasis Potensi Lokal dan Teknologi Informasi."
+                </p>
+            </div>
+
+            <div>
+                <h2 class="text-xl font-bold text-gray-800 mb-4">MISI DESA</h2>
+                <ol class="list-decimal list-inside space-y-3 text-gray-700 leading-relaxed">
+                    <li class="pl-2">Meningkatkan kualitas tata kelola pemerintahan desa yang bersih, transparan, dan akuntabel.</li>
+                    <li class="pl-2">Mendorong pertumbuhan ekonomi desa melalui pemberdayaan UMKM dan potensi pertanian lokal.</li>
+                    <li class="pl-2">Meningkatkan kualitas pelayanan publik melalui keterbukaan informasi dan digitalisasi arsip desa.</li>
+                    <li class="pl-2">Memelihara kelestarian adat istiadat, budaya, dan semangat gotong royong antar warga.</li>
+                </ol>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-container"></div>
+
+    <script type="module">
+        import { renderHeader, initHeaderEvents } from './src/components/Header.js';
+        import { renderFooter } from './src/components/Footer.js';
+
+        document.getElementById('header-container').innerHTML = renderHeader('profil');
+        document.getElementById('footer-container').innerHTML = renderFooter();
+        initHeaderEvents();
+    </script>
+</body>
+</html>

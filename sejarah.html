@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sejarah Desa - Manik Maraja</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 flex flex-col min-h-screen">
+    <div id="header-container"></div>
+
+    <main class="max-w-4xl mx-auto px-4 py-8 flex-grow">
+        <div class="bg-white p-6 md:p-8 rounded-xl shadow-sm border border-gray-100">
+            <h1 class="text-3xl font-bold text-gray-800 mb-6 border-b pb-4">Sejarah Desa Manik Maraja</h1>
+            
+            <div class="prose max-w-none text-gray-600 leading-relaxed space-y-4">
+                <p>
+                    Desa Manik Maraja terbentuk dari sejarah panjang kearifan lokal masyarakat Simalungun. Nama <strong>Manik Maraja</strong> diambil dari nilai-nilai luhur kepemimpinan dan kebersamaan warga setempat secara turun-temurun.
+                </p>
+                <p>
+                    Sejak awal berdirinya, desa ini berkembang menjadi pusat pemukiman yang berfokus pada sektor pertanian dan perkebunan. Semangat gotong royong warga telah menjaga kelestarian adat, tradisi, dan keharmonisan bermasyarakat hingga saat ini.
+                </p>
+                <p>
+                    Dengan berkembangnya era digital, Desa Manik Maraja kini berkomitmen untuk mewujudkan keterbukaan informasi publik dan digitalisasi arsip desa demi pelayanan yang lebih baik bagi seluruh warga.
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-container"></div>
+
+    <script type="module">
+        import { renderHeader, initHeaderEvents } from './src/components/Header.js';
+        import { renderFooter } from './src/components/Footer.js';
+
+        document.getElementById('header-container').innerHTML = renderHeader('profil');
+        document.getElementById('footer-container').innerHTML = renderFooter();
+        initHeaderEvents();
+    </script>
+</body>
+</html>

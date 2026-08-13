@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Status Desa - Manik Maraja</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 flex flex-col min-h-screen">
+    <div id="header-container"></div>
+
+    <main class="max-w-4xl mx-auto px-4 py-8 flex-grow">
+        <div class="bg-white p-6 md:p-8 rounded-xl shadow-sm border border-gray-100">
+            <h1 class="text-3xl font-bold text-gray-800 mb-6 border-b pb-4">Status & Profil Administratif Desa</h1>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                    <span class="text-xs text-gray-500 font-semibold uppercase">Nama Desa</span>
+                    <p class="text-lg font-bold text-gray-800">Manik Maraja</p>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                    <span class="text-xs text-gray-500 font-semibold uppercase">Kecamatan</span>
+                    <p class="text-lg font-bold text-gray-800">Sidamanik</p>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                    <span class="text-xs text-gray-500 font-semibold uppercase">Kabupaten</span>
+                    <p class="text-lg font-bold text-gray-800">Simalungun</p>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                    <span class="text-xs text-gray-500 font-semibold uppercase">Provinsi</span>
+                    <p class="text-lg font-bold text-gray-800">Sumatera Utara</p>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                    <span class="text-xs text-gray-500 font-semibold uppercase">Status IDM (Indeks Desa Membangun)</span>
+                    <p class="text-lg font-bold text-green-600">Desa Maju</p>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                    <span class="text-xs text-gray-500 font-semibold uppercase">Kode Wilayah / Pos</span>
+                    <p class="text-lg font-bold text-gray-800">21171</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-container"></div>
+
+    <script type="module">
+        import { renderHeader, initHeaderEvents } from './src/components/Header.js';
+        import { renderFooter } from './src/components/Footer.js';
+
+        document.getElementById('header-container').innerHTML = renderHeader('profil');
+        document.getElementById('footer-container').innerHTML = renderFooter();
+        initHeaderEvents();
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peta Wilayah - Desa Manik Maraja</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 flex flex-col min-h-screen">
+    <div id="header-container"></div>
+
+    <main class="max-w-5xl mx-auto px-4 py-8 flex-grow w-full">
+        <div class="bg-white p-6 md:p-8 rounded-xl shadow-sm border border-gray-100">
+            <h1 class="text-3xl font-bold text-gray-800 mb-2">Peta Lokasi & Wilayah Desa</h1>
+            <p class="text-gray-600 mb-6">Peta interaktif wilayah Desa Manik Maraja, Kec. Sidamanik, Kab. Simalungun.</p>
+            
+            <div class="w-full h-96 md:h-[500px] rounded-lg overflow-hidden border border-gray-200 shadow-inner">
+                <iframe 
+                    class="w-full h-full border-0"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15933.205779089552!2d98.9228515!3d2.8872583!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3031840eb140cb03%3A0xa1969e061ddf44e6!2sManik%20Maraja%2C%20Kec.%20Sidamanik%2C%20Kabupaten%20Simalungun%2C%20Sumatera%2 Utara!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-container"></div>
+
+    <script type="module">
+        import { renderHeader, initHeaderEvents } from './src/components/Header.js';
+        import { renderFooter } from './src/components/Footer.js';
+
+        document.getElementById('header-container').innerHTML = renderHeader('peta');
+        document.getElementById('footer-container').innerHTML = renderFooter();
+        initHeaderEvents();
+    </script>
+</body>
+</html>
