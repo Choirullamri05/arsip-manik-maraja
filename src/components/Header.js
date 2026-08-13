@@ -32,6 +32,10 @@ export function renderHeader(activeMenu = '') {
                 <a href="umkm.html" class="hover:underline ${activeMenu === 'umkm' ? 'font-bold underline' : ''}">
                     UMKM Desa
                 </a>
+
+                <a href="galeri-kkn.html" class="hover:underline ${activeMenu === 'kkn' ? 'font-bold underline' : ''}">
+                    Galeri KKN
+                </a>
             </nav>
 
             <button id="btn-menu-mobile" class="md:hidden p-1 focus:outline-none">
@@ -51,6 +55,7 @@ export function renderHeader(activeMenu = '') {
             </div>
             <a href="peta.html" class="py-1 hover:bg-blue-700 px-2 rounded">Peta</a>
             <a href="umkm.html" class="py-1 hover:bg-blue-700 px-2 rounded">UMKM Desa</a>
+            <a href="galeri-kkn.html" class="py-1 hover:bg-blue-700 px-2 rounded">Galeri KKN</a>
         </div>
     </header>
     `;
