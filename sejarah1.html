@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sejarah Nagori Manik Maraja</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --forest: #1E3A2B;
+    --moss: #4C6B47;
+    --parchment: #F1ECDD;
+    --clay: #9C5A2E;
+    --gold: #B98A2E;
+    --ink: #22281F;
+  }
+
+  *{ box-sizing:border-box; }
+
+  body{
+    margin:0;
+    background: var(--parchment);
+    color: var(--ink);
+    font-family:'Inter', sans-serif;
+    line-height:1.7;
+  }
+
+  .sejarah-section{
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 64px 24px 96px;
+    position: relative;
+  }
+
+  /* signature element: contour lines evoking perbukitan & aliran mata air */
+  .contours{
+    position:absolute;
+    top:0; left:0; right:0;
+    height:160px;
+    overflow:hidden;
+    z-index:0;
+  }
+  .contours svg{ width:100%; height:100%; display:block; }
+
+  .eyebrow{
+    position:relative;
+    z-index:1;
+    font-family:'JetBrains Mono', monospace;
+    font-size:13px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color: var(--clay);
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin: 40px 0 18px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:28px; height:1px;
+    background: var(--clay);
+  }
+
+  h1.sejarah-title{
+    position:relative;
+    z-index:1;
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size: clamp(32px, 5vw, 48px);
+    line-height:1.1;
+    margin: 0 0 8px;
+    color: var(--forest);
+  }
+  .subtitle{
+    font-size:16px;
+    color:#5b6350;
+    max-width:60ch;
+    margin-bottom:44px;
+  }
+
+  .lede::first-letter{
+    font-family:'Fraunces', serif;
+    font-size: 3.6em;
+    font-weight:600;
+    float:left;
+    line-height:0.85;
+    padding-right:10px;
+    padding-top:6px;
+    color: var(--forest);
+  }
+
+  .sejarah-body p{
+    font-size:16.5px;
+    color:#333c2c;
+    margin: 0 0 20px;
+  }
+
+  .sejarah-body strong{
+    color: var(--forest);
+    font-weight:600;
+  }
+
+  /* divider: sederet 'daun teh' sebagai pemisah bagian */
+  .leaf-divider{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin: 40px 0;
+    color: var(--moss);
+  }
+  .leaf-divider .line{
+    flex:1; height:1px; background: rgba(76,107,71,0.3);
+  }
+  .leaf-divider svg{ width:16px; height:16px; }
+
+  .fact-plaque{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: rgba(30,58,43,0.15);
+    border: 1px solid rgba(30,58,43,0.15);
+    border-radius: 4px;
+    overflow:hidden;
+    margin: 36px 0;
+  }
+  .fact{
+    background: #fdfbf3;
+    padding: 20px 18px;
+  }
+  .fact .num{
+    font-family:'JetBrains Mono', monospace;
+    font-size:22px;
+    color: var(--clay);
+    display:block;
+    margin-bottom:4px;
+  }
+  .fact .label{
+    font-size:12.5px;
+    color:#6b7362;
+    text-transform:uppercase;
+    letter-spacing:0.06em;
+  }
+
+  .callout{
+    border-left: 3px solid var(--gold);
+    background: rgba(185,138,46,0.08);
+    padding: 20px 24px;
+    border-radius: 0 6px 6px 0;
+    margin: 32px 0;
+  }
+  .callout .callout-label{
+    font-family:'JetBrains Mono', monospace;
+    font-size:12px;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color: var(--gold);
+    margin-bottom:8px;
+    display:block;
+  }
+  .callout p{ margin:0; font-size:15.5px; color:#3a3a2c; }
+
+  .section-block{ margin-top: 64px; }
+
+  h2.block-title{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size: clamp(24px, 3.2vw, 30px);
+    color: var(--forest);
+    margin: 0 0 6px;
+  }
+  .block-intro{
+    font-size:15px;
+    color:#5b6350;
+    max-width:60ch;
+    margin-bottom:28px;
+  }
+
+  /* tradisi adat: kartu ganda merepresentasikan dua nilai — bersih desa & kerukunan */
+  .tradisi-grid{
+    display:grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 20px;
+    margin-bottom: 8px;
+  }
+  .tradisi-card{
+    background:#fdfbf3;
+    border:1px solid rgba(30,58,43,0.14);
+    border-radius:8px;
+    padding:24px;
+  }
+  .tradisi-card .tag{
+    font-family:'JetBrains Mono', monospace;
+    font-size:11.5px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color: var(--moss);
+    background: rgba(76,107,71,0.1);
+    padding:4px 10px;
+    border-radius:20px;
+    display:inline-block;
+    margin-bottom:14px;
+  }
+  .tradisi-card h3{
+    font-family:'Fraunces', serif;
+    font-size:19px;
+    font-weight:600;
+    color: var(--forest);
+    margin:0 0 10px;
+  }
+  .tradisi-card p{
+    font-size:14.5px;
+    color:#3a3a2c;
+    margin:0;
+  }
+  .tradisi-card.rukun .tag{
+    color: var(--clay);
+    background: rgba(156,90,46,0.1);
+  }
+
+  .kerukunan-strip{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:18px;
+  }
+  .kerukunan-strip span{
+    font-size:12.5px;
+    font-family:'JetBrains Mono', monospace;
+    color: var(--forest);
+    border:1px solid rgba(30,58,43,0.2);
+    padding:5px 12px;
+    border-radius:20px;
+    background: rgba(30,58,43,0.04);
+  }
+
+  /* dusun profile: kartu wilayah dengan catatan sumber */
+  .dusun-card{
+    background: var(--forest);
+    color: #eef2ea;
+    border-radius: 10px;
+    padding: 30px 28px;
+    position:relative;
+    overflow:hidden;
+  }
+  .dusun-card::after{
+    content:"";
+    position:absolute;
+    right:-40px; bottom:-40px;
+    width:180px; height:180px;
+    border-radius:50%;
+    background: radial-gradient(circle, rgba(185,138,46,0.25), transparent 70%);
+  }
+  .dusun-card .dusun-eyebrow{
+    font-family:'JetBrains Mono', monospace;
+    font-size:12px;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:#C9D6BE;
+    margin-bottom:10px;
+  }
+  .dusun-card h3{
+    font-family:'Fraunces', serif;
+    font-size:24px;
+    font-weight:600;
+    margin:0 0 14px;
+    color:#fff;
+  }
+  .dusun-card p{
+    font-size:15px;
+    color:#dfe6d8;
+    margin:0 0 16px;
+    max-width:62ch;
+    position:relative;
+    z-index:1;
+  }
+  .dusun-note{
+    font-size:13px;
+    background: rgba(255,255,255,0.08);
+    border-left: 3px solid var(--gold);
+    padding: 12px 16px;
+    border-radius: 0 6px 6px 0;
+    color:#f1ead0;
+    position:relative;
+    z-index:1;
+  }
+  .dusun-note strong{ color:#fff; }
+
+  @media (max-width: 640px){
+    .fact-plaque{ grid-template-columns: 1fr; }
+    .sejarah-section{ padding: 40px 18px 64px; }
+    .tradisi-grid{ grid-template-columns: 1fr; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ scroll-behavior:auto !important; }
+  }
+</style>
+</head>
+<body>
+
+<section class="sejarah-section">
+
+  <div class="contours" aria-hidden="true">
+    <svg viewBox="0 0 900 160" preserveAspectRatio="none">
+      <path d="M0,120 C150,60 300,140 450,90 C600,40 750,110 900,70" fill="none" stroke="#4C6B47" stroke-width="1.2" opacity="0.35"/>
+      <path d="M0,140 C150,90 300,150 450,110 C600,70 750,130 900,95" fill="none" stroke="#9C5A2E" stroke-width="1.2" opacity="0.25"/>
+      <path d="M0,100 C150,150 300,90 450,130 C600,160 750,90 900,120" fill="none" stroke="#B98A2E" stroke-width="1" opacity="0.2"/>
+    </svg>
+  </div>
+
+  <div class="eyebrow">Profil Nagori</div>
+  <h1 class="sejarah-title">Sejarah Nagori Manik Maraja</h1>
+  <p class="subtitle">Kecamatan Sidamanik, Kabupaten Simalungun, Provinsi Sumatera Utara</p>
+
+  <div class="sejarah-body">
+    <p class="lede">Nagori Manik Maraja lahir dari pemekaran wilayah pada tahun 2002. Sebelumnya, kawasan ini merupakan bagian dari Desa Sarimatondang yang kemudian dibagi menjadi dua wilayah administratif: Kelurahan Sarimatondang dan Nagori Manik Maraja. Pemekaran ini dilakukan untuk mempercepat pelayanan pemerintahan dan pembangunan bagi masyarakat setempat.</p>
+
+    <div class="callout">
+      <span class="callout-label">Arti Nama</span>
+      <p>Nama <strong>"Manik Maraja"</strong> lekat dengan sejarah lokal masyarakat Simalungun. Kata "maraja" mencerminkan nilai luhur, kemuliaan, atau keturunan besar yang dihormati dalam tradisi setempat — sebuah penamaan yang menegaskan penghormatan terhadap tokoh dan garis keturunan besar di kawasan Sidamanik ini.</p>
+    </div>
+
+    <p>Sosok yang berperan penting dalam berdirinya nagori ini adalah <strong>Bapak Suadak</strong>, yang tercatat sebagai pendiri sekaligus Kepala Desa pertama Manik Maraja. Di bawah kepemimpinannya, wilayah yang baru dimekarkan ini mulai membangun tata pemerintahan dan kehidupan masyarakatnya sendiri.</p>
+
+    <div class="leaf-divider" aria-hidden="true">
+      <div class="line"></div>
+      <svg viewBox="0 0 24 24" fill="none" stroke="#4C6B47" stroke-width="1.4"><path d="M4 20C4 10 12 4 20 4C20 12 14 20 4 20Z"/><path d="M4 20C10 16 14 10 20 4"/></svg>
+      <div class="line"></div>
+    </div>
+
+    <p>Terletak sekitar 45 menit dari Kota Pematangsiantar, Manik Maraja dikenal dengan tanah yang subur, sumber mata air yang melimpah, serta kehidupan masyarakat yang plural dan bersandar pada sektor pertanian dan perkebunan. Karakter wilayah inilah yang membentuk wajah nagori hingga saat ini — kawasan yang tumbuh dari tanah perkebunan dan diwarisi oleh nilai kemuliaan yang terkandung dalam namanya.</p>
+  </div>
+
+  <div class="fact-plaque">
+    <div class="fact">
+      <span class="num">2002</span>
+      <span class="label">Tahun Terbentuk</span>
+    </div>
+    <div class="fact">
+      <span class="num">Suadak</span>
+      <span class="label">Kepala Desa Pertama</span>
+    </div>
+    <div class="fact">
+      <span class="num">Sarimatondang</span>
+      <span class="label">Wilayah Induk Pemekaran</span>
+    </div>
+  </div>
+
+  <!-- ================= TRADISI ADAT ================= -->
+  <div class="section-block">
+    <div class="eyebrow">Warisan Budaya</div>
+    <h2 class="block-title">Tradisi Adat</h2>
+    <p class="block-intro">Manik Maraja dihuni masyarakat berbudaya Jawa dan Batak yang hidup berdampingan. Tiap kelompok menjaga tradisinya sendiri, sementara kerukunan lintas agama dirawat lewat program bersama di tingkat nagori.</p>
+
+    <div class="tradisi-grid">
+      <div class="tradisi-card">
+        <span class="tag">Adat Jawa</span>
+        <h3>Suroan</h3>
+        <p>Suroan adalah tradisi tahunan warga berbudaya Jawa dalam menyambut bulan Suro (Muharram), berdampingan dengan tradisi Jawa lain seperti punggahan dan nemokkan. Warga berbudaya Batak pun turut mengadopsi sejumlah unsurnya, seperti tradisi kenduri, sebagai bentuk akulturasi budaya di nagori ini.</p>
+      </div>
+      <div class="tradisi-card">
+        <span class="tag">Syiar Islam</span>
+        <h3>Penyambutan 10 Muharram</h3>
+        <p>Bagi warga muslim, momen 10 Muharram dirayakan sebagai salah satu hari besar Islam, berdampingan dengan peringatan Maulid Nabi dan Isra Mikraj, serta kegiatan keagamaan rutin seperti pengajian dan wirid mingguan.</p>
+      </div>
+    </div>
+
+    <div class="tradisi-card rukun" style="margin-top:20px;">
+      <span class="tag">Program Nagori</span>
+      <h3>Kampung Moderasi Beragama</h3>
+      <p>Kerukunan lintas agama di Manik Maraja — yang dihuni sekitar 80% warga muslim dan 20% warga Kristen — dijaga lewat program resmi <strong>Kampung Moderasi Beragama (KMB)</strong> yang dicanangkan Kementerian Agama Kabupaten Simalungun pada 2023, ditandai plang di halaman kantor desa. Program ini melengkapi <strong>Kampung Pancasila</strong> yang lebih dulu diresmikan di Dusun III pada 2022. Semangat gotong royong pembangunan turut menjadi ruang temu warga lintas suku dan agama sehari-hari.</p>
+      <div class="kerukunan-strip">
+        <span>~80% Islam</span>
+        <span>~20% Kristen</span>
+        <span>Gotong Royong</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= DUSUN I ================= -->
+  <div class="section-block">
+    <div class="eyebrow">Wilayah Nagori</div>
+    <h2 class="block-title">Mengenal Dusun I</h2>
+    <p class="block-intro">Salah satu dari lima dusun yang membentuk Nagori Manik Maraja.</p>
+
+    <div class="dusun-card">
+      <div class="dusun-eyebrow">Huta / Dusun I — Nagori Manik Maraja</div>
+      <h3>Bagian dari Lima Dusun Manik Maraja</h3>
+      <p>Nagori Manik Maraja terbagi menjadi 5 (lima) dusun. Dusun I dikenal sebagai lokasi <strong>Musholla Simatahuting</strong>, salah satu tempat ibadah umat muslim di nagori ini. Sebagaimana empat dusun lainnya — kecuali Dusun V yang justru mayoritas dihuni warga Kristen dengan Gereja GKPS di dalamnya — populasi muslim lebih dominan di Dusun I, sejalan dengan sebaran umat Islam yang merata di hampir seluruh kawasan nagori.</p>
+      <div class="dusun-note">
+        <strong>Catatan:</strong> Data ini bersumber dari riset KKN UIN Sumatera Utara (2023) dan masih bersifat umum di tingkat nagori. Data spesifik Dusun I seperti batas wilayah, jumlah KK, dan jumlah jiwa belum ditemukan di sumber publik — disarankan dilengkapi langsung dari Kepala Dusun I atau Kantor Nagori Manik Maraja agar akurat.
+      </div>
+    </div>
+  </div>
+
+</section>
+
+</body>
+</html>

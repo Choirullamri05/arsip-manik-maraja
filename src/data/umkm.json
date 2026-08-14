@@ -4,24 +4,30 @@
     "namaUsaha": "Masif Es Kristal",
     "kategori": "Kuliner / Olahan",
     "namaPenjual": "Bapak Masif",
-    "nomorHp": "6285177315723",
-    "nomorWa": "6285177315723",
+    "nomorHp": "085177315723",
+    "waktuBuka": "Setiap Hari (08.00 - 21.00 WIB)",
     "deskripsi": "Penyedia es kristal higienis untuk kebutuhan rumah tangga maupun acara.",
-    "gambar": "./assets/img/masif es kristal.png",
-    "gmapsEmbed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3984.840260660189!2d98.91520847474246!3d2.8624392971142134!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x303197adfe485131%3A0xbd8203b34ad6c13b!2sMasif%20Es%20Kristal!5e0!3m2!1sid!2sid!4v1786707066326!5m2!1sid!2sid",
-    "gmapsLink": "https://maps.app.goo.gl/ez5Uz3mvBkpaKfF19"
+    "gambar": [
+      "./assets/img/masif es kristal.png",
+      "./assets/img/mie-balap.png"
+    ],
+    "gmapsEmbed": "https://www.google.com/maps/embed?pb=...",
+    "gmapsLink": "https://maps.google.com/..."
   },
   {
     "id": "mie-balap",
     "namaUsaha": "Mie Balap Bang Doyok",
     "kategori": "Kuliner",
     "namaPenjual": "Bang Doyok",
-    "nomorHp": "6282198765432",
-    "nomorWa": "6282198765432",
+    "nomorHp": "082198765432",
+    "waktuBuka": "Senin - Sabtu (06.00 - 12.00 WIB)",
     "deskripsi": "Mie balap khas Medan yang lezat dan gurih dengan porsi memuaskan.",
-    "gambar": "./assets/img/mie-balap.png",
-    "gmapsEmbed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3984.something!2d...",
-    "gmapsLink": "https://maps.google.com/?q=Mie+Balap+Bang+Doyok"
+    "gambar": [
+      "./assets/img/mie-balap-1.png",
+      "./assets/img/mie-balap-2.png"
+    ],
+    "gmapsEmbed": "https://www.google.com/maps/embed?pb=...",
+    "gmapsLink": "https://maps.google.com/..."
   },
   {
     "id": "jahit-henri",
@@ -29,10 +35,13 @@
     "kategori": "Jasa & Konveksi",
     "namaPenjual": "Henri Sampurno",
     "nomorHp": "081311223344",
-    "nomorWa": "6281311223344",
+    "waktuBuka": "Senin - Minggu (09.00 - 17.00 WIB)",
     "deskripsi": "Jasa jahit pakaian harian, seragam, dan perbaikan busana rapi berkualitas.",
-    "gambar": "./assets/img/penjahit.png",
-    "gmapsEmbed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3984.something!2d...",
-    "gmapsLink": "https://maps.google.com/?q=Jahit+Henri+Sampurno"
+    "gambar": [
+      "./assets/img/penjahit-1.png",
+      "./assets/img/penjahit-2.png"
+    ],
+    "gmapsEmbed": "https://www.google.com/maps/embed?pb=...",
+    "gmapsLink": "https://maps.google.com/..."
   }
-]   
+]
