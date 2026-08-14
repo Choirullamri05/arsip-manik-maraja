@@ -1,0 +1,34 @@
+[
+  {
+    "id": "sosialisasi-web",
+    "judul": "Sosialisasi Website Desa",
+    "tanggal": "10 Agustus 2026",
+    "deskripsi": "Pemaparan penggunaan website arsip desa bersama perangkat desa Manik Maraja di balai desa.",
+    "gambar": "./assets/img/galeri-1.png",
+    "kategori": "Program Kerja"
+  },
+  {
+    "id": "pendataan-umkm",
+    "judul": "Kunjungan ke Pelaku UMKM",
+    "tanggal": "12 Agustus 2026",
+    "deskripsi": "Proses pendataan dan wawancara dengan pemilik usaha lokal warga desa.",
+    "gambar": "./assets/img/galeri-2.png",
+    "kategori": "UMKM"
+  },
+  {
+    "id": "posyandu",
+    "judul": "Bantuan Layanan Posyandu",
+    "tanggal": "18 Agustus 2026",
+    "deskripsi": "Membantu kader posyandu dalam melakukan penimbangan balita dan pengecekan kesehatan lansia.",
+    "gambar": "./assets/img/galeri-3.png",
+    "kategori": "Kesehatan"
+  },
+  {
+    "id": "gotong-royong",
+    "judul": "Jumat Bersih Bersama Warga",
+    "tanggal": "20 Agustus 2026",
+    "deskripsi": "Kegiatan gotong royong membersihkan pekarangan fasilitas umum dan saluran air.",
+    "gambar": "./assets/img/galeri-4.png",
+    "kategori": "Lingkungan"
+  }
+]

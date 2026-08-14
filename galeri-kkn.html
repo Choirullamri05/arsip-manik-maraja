@@ -6,14 +6,8 @@
     <title>Galeri & Dokumentasi KKN - Desa Manik Maraja</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Menyembunyikan scrollbar tapi tetap bisa di-scroll */
-        .hide-scrollbar::-webkit-scrollbar {
-            display: none;
-        }
-        .hide-scrollbar {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
     </style>
 </head>
 <body class="bg-gray-50 flex flex-col min-h-screen">
@@ -24,7 +18,7 @@
         <div class="bg-blue-600 text-white rounded-2xl p-6 md:p-10 mb-10 shadow-lg text-center md:text-left flex flex-col md:flex-row items-center justify-between gap-6">
             <div class="max-w-2xl">
                 <span class="bg-blue-500 text-blue-100 text-xs px-3 py-1 rounded-full font-semibold uppercase tracking-wider">Pengabdian Masyarakat</span>
-                <h1 class="text-3xl md:text-4xl font-bold mt-3">Dokumentasi KKN Desa Manik Maraja Dusun 1</h1>
+                <h1 class="text-3xl md:text-4xl font-bold mt-3">Galeri & Dokumentasi KKN Desa Manik Maraja</h1>
                 <p class="text-blue-100 mt-2 text-sm md:text-base leading-relaxed">
                     Arsip kegiatan, program kerja, dan kenangan pengabdian tim mahasiswa Kuliah Kerja Nyata (KKN) dalam mendukung digitalisasi dan pemberdayaan Desa Manik Maraja.
                 </p>
@@ -54,62 +48,7 @@
             </div>
             
             <div id="proker-slider" class="flex gap-6 overflow-x-auto snap-x snap-mandatory hide-scrollbar scroll-smooth pb-4">
-                
-                <div class="w-[85vw] sm:w-[45vw] md:w-[calc(33.333%-16px)] flex-shrink-0 snap-start bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition">
-                    <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center font-bold text-xl mb-4">💻</div>
-                    <h3 class="font-bold text-gray-800 text-lg mb-2">Digitalisasi Arsip Desa</h3>
-                    <p class="text-gray-600 text-sm leading-relaxed">Pengembangan website statis berbasis Client-Side MVC dan Vercel untuk mempermudah pencarian berkas dan surat-surat publik desa.</p>
                 </div>
-                
-                <div class="w-[85vw] sm:w-[45vw] md:w-[calc(33.333%-16px)] flex-shrink-0 snap-start bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition">
-                    <div class="w-12 h-12 bg-green-100 text-green-600 rounded-lg flex items-center justify-center font-bold text-xl mb-4">🛒</div>
-                    <h3 class="font-bold text-gray-800 text-lg mb-2">Pemberdayaan UMKM</h3>
-                    <p class="text-gray-600 text-sm leading-relaxed">Pendataan dan publikasi potensi usaha lokal warga desa agar lebih dikenal oleh masyarakat luas melalui platform digital.</p>
-                </div>
-
-                <div class="w-[85vw] sm:w-[45vw] md:w-[calc(33.333%-16px)] flex-shrink-0 snap-start bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition">
-                    <div class="w-12 h-12 bg-amber-100 text-amber-600 rounded-lg flex items-center justify-center font-bold text-xl mb-4">🤝</div>
-                    <h3 class="font-bold text-gray-800 text-lg mb-2">Pemberdayaan Warga</h3>
-                    <p class="text-gray-600 text-sm leading-relaxed">Pelatihan penggunaan sistem informasi desa kepada perangkat desa agar pengelolaan arsip dapat berlanjut secara mandiri.</p>
-                </div>
-
-                <div class="w-[85vw] sm:w-[45vw] md:w-[calc(33.333%-16px)] flex-shrink-0 snap-start bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition">
-                    <div class="w-12 h-12 bg-red-100 text-red-600 rounded-lg flex items-center justify-center font-bold text-xl mb-4">🗺️</div>
-                    <h3 class="font-bold text-gray-800 text-lg mb-2">Pemetaan Wilayah</h3>
-                    <p class="text-gray-600 text-sm leading-relaxed">Pembuatan peta batas administrasi desa dan dusun digital untuk diintegrasikan ke dalam website desa.</p>
-                </div>
-
-                <div class="w-[85vw] sm:w-[45vw] md:w-[calc(33.333%-16px)] flex-shrink-0 snap-start bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition">
-                    <div class="w-12 h-12 bg-purple-100 text-purple-600 rounded-lg flex items-center justify-center font-bold text-xl mb-4">🩺</div>
-                    <h3 class="font-bold text-gray-800 text-lg mb-2">Bantuan Posyandu</h3>
-                    <p class="text-gray-600 text-sm leading-relaxed">Berpartisipasi aktif dalam kegiatan posyandu bulanan untuk pengecekan kesehatan balita dan lansia.</p>
-                </div>
-
-                <div class="w-[85vw] sm:w-[45vw] md:w-[calc(33.333%-16px)] flex-shrink-0 snap-start bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition">
-                    <div class="w-12 h-12 bg-teal-100 text-teal-600 rounded-lg flex items-center justify-center font-bold text-xl mb-4">🧹</div>
-                    <h3 class="font-bold text-gray-800 text-lg mb-2">Gotong Royong Bersih Desa</h3>
-                    <p class="text-gray-600 text-sm leading-relaxed">Kerja bakti bersama perangkat desa dan warga membersihkan fasilitas umum, masjid, dan balai desa.</p>
-                </div>
-
-                <div class="w-[85vw] sm:w-[45vw] md:w-[calc(33.333%-16px)] flex-shrink-0 snap-start bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition">
-                    <div class="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-lg flex items-center justify-center font-bold text-xl mb-4">📚</div>
-                    <h3 class="font-bold text-gray-800 text-lg mb-2">Bimbingan Belajar Gratis</h3>
-                    <p class="text-gray-600 text-sm leading-relaxed">Membuka kelas bimbingan belajar gratis setelah jam sekolah untuk anak-anak SD di sekitar balai desa.</p>
-                </div>
-
-                <div class="w-[85vw] sm:w-[45vw] md:w-[calc(33.333%-16px)] flex-shrink-0 snap-start bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition">
-                    <div class="w-12 h-12 bg-orange-100 text-orange-600 rounded-lg flex items-center justify-center font-bold text-xl mb-4">🎉</div>
-                    <h3 class="font-bold text-gray-800 text-lg mb-2">Semarak 17 Agustus</h3>
-                    <p class="text-gray-600 text-sm leading-relaxed">Menjadi panitia pelaksana perlombaan HUT Kemerdekaan RI tingkat desa bersama pemuda setempat.</p>
-                </div>
-
-                <div class="w-[85vw] sm:w-[45vw] md:w-[calc(33.333%-16px)] flex-shrink-0 snap-start bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition">
-                    <div class="w-12 h-12 bg-pink-100 text-pink-600 rounded-lg flex items-center justify-center font-bold text-xl mb-4">🌱</div>
-                    <h3 class="font-bold text-gray-800 text-lg mb-2">Penghijauan Jalan Desa</h3>
-                    <p class="text-gray-600 text-sm leading-relaxed">Penanaman bibit pohon buah di pinggiran jalan utama desa sebagai bentuk kenang-kenangan fisik KKN.</p>
-                </div>
-
-            </div>
         </section>
 
         <section class="mb-14 relative">
@@ -131,107 +70,7 @@
             </div>
             
             <div id="galeri-slider" class="flex gap-6 overflow-x-auto snap-x snap-mandatory hide-scrollbar scroll-smooth pb-4">
-                
-                <div class="w-[85vw] sm:w-[45vw] md:w-[calc(33.333%-16px)] flex-shrink-0 snap-start bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-md transition group">
-                    <div class="bg-gray-200 h-48 flex items-center justify-center text-gray-400 group-hover:scale-105 transition duration-300">
-                        <span class="text-sm">📷 [Foto Sosialisasi]</span>
-                    </div>
-                    <div class="p-4 bg-white relative z-10">
-                        <span class="text-xs text-blue-600 font-semibold">10 Agustus 2026</span>
-                        <h4 class="font-bold text-gray-800 mt-1">Sosialisasi Website Desa</h4>
-                        <p class="text-gray-500 text-xs mt-1">Pemaparan penggunaan website arsip desa bersama perangkat desa Manik Maraja.</p>
-                    </div>
                 </div>
-
-                <div class="w-[85vw] sm:w-[45vw] md:w-[calc(33.333%-16px)] flex-shrink-0 snap-start bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-md transition group">
-                    <div class="bg-gray-200 h-48 flex items-center justify-center text-gray-400 group-hover:scale-105 transition duration-300">
-                        <span class="text-sm">📷 [Foto Pendataan UMKM]</span>
-                    </div>
-                    <div class="p-4 bg-white relative z-10">
-                        <span class="text-xs text-blue-600 font-semibold">12 Agustus 2026</span>
-                        <h4 class="font-bold text-gray-800 mt-1">Kunjungan ke Pelaku UMKM</h4>
-                        <p class="text-gray-500 text-xs mt-1">Proses pendataan dan wawancara dengan pemilik usaha lokal warga desa.</p>
-                    </div>
-                </div>
-
-                <div class="w-[85vw] sm:w-[45vw] md:w-[calc(33.333%-16px)] flex-shrink-0 snap-start bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-md transition group">
-                    <div class="bg-gray-200 h-48 flex items-center justify-center text-gray-400 group-hover:scale-105 transition duration-300">
-                        <span class="text-sm">📷 [Foto Perangkat Desa]</span>
-                    </div>
-                    <div class="p-4 bg-white relative z-10">
-                        <span class="text-xs text-blue-600 font-semibold">15 Agustus 2026</span>
-                        <h4 class="font-bold text-gray-800 mt-1">Foto Bersama Perangkat Desa</h4>
-                        <p class="text-gray-500 text-xs mt-1">Penyerahan secara simbolis sistem arsip digital kepada Kepala Desa.</p>
-                    </div>
-                </div>
-
-                <div class="w-[85vw] sm:w-[45vw] md:w-[calc(33.333%-16px)] flex-shrink-0 snap-start bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-md transition group">
-                    <div class="bg-gray-200 h-48 flex items-center justify-center text-gray-400 group-hover:scale-105 transition duration-300">
-                        <span class="text-sm">📷 [Foto Posyandu]</span>
-                    </div>
-                    <div class="p-4 bg-white relative z-10">
-                        <span class="text-xs text-blue-600 font-semibold">18 Agustus 2026</span>
-                        <h4 class="font-bold text-gray-800 mt-1">Bantuan Layanan Posyandu</h4>
-                        <p class="text-gray-500 text-xs mt-1">Membantu kader posyandu dalam melakukan penimbangan balita.</p>
-                    </div>
-                </div>
-
-                <div class="w-[85vw] sm:w-[45vw] md:w-[calc(33.333%-16px)] flex-shrink-0 snap-start bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-md transition group">
-                    <div class="bg-gray-200 h-48 flex items-center justify-center text-gray-400 group-hover:scale-105 transition duration-300">
-                        <span class="text-sm">📷 [Foto Gotong Royong]</span>
-                    </div>
-                    <div class="p-4 bg-white relative z-10">
-                        <span class="text-xs text-blue-600 font-semibold">20 Agustus 2026</span>
-                        <h4 class="font-bold text-gray-800 mt-1">Jumat Bersih Bersama Warga</h4>
-                        <p class="text-gray-500 text-xs mt-1">Kegiatan gotong royong membersihkan pekarangan fasilitas umum.</p>
-                    </div>
-                </div>
-
-                <div class="w-[85vw] sm:w-[45vw] md:w-[calc(33.333%-16px)] flex-shrink-0 snap-start bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-md transition group">
-                    <div class="bg-gray-200 h-48 flex items-center justify-center text-gray-400 group-hover:scale-105 transition duration-300">
-                        <span class="text-sm">📷 [Foto Bimbel]</span>
-                    </div>
-                    <div class="p-4 bg-white relative z-10">
-                        <span class="text-xs text-blue-600 font-semibold">22 Agustus 2026</span>
-                        <h4 class="font-bold text-gray-800 mt-1">Kelas Bimbingan Belajar</h4>
-                        <p class="text-gray-500 text-xs mt-1">Suasana belajar mengajar bersama adik-adik siswa SD di posko.</p>
-                    </div>
-                </div>
-
-                <div class="w-[85vw] sm:w-[45vw] md:w-[calc(33.333%-16px)] flex-shrink-0 snap-start bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-md transition group">
-                    <div class="bg-gray-200 h-48 flex items-center justify-center text-gray-400 group-hover:scale-105 transition duration-300">
-                        <span class="text-sm">📷 [Foto 17an]</span>
-                    </div>
-                    <div class="p-4 bg-white relative z-10">
-                        <span class="text-xs text-blue-600 font-semibold">25 Agustus 2026</span>
-                        <h4 class="font-bold text-gray-800 mt-1">Keseruan Lomba 17 Agustus</h4>
-                        <p class="text-gray-500 text-xs mt-1">Pelaksanaan lomba tarik tambang antar dusun di lapangan desa.</p>
-                    </div>
-                </div>
-
-                <div class="w-[85vw] sm:w-[45vw] md:w-[calc(33.333%-16px)] flex-shrink-0 snap-start bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-md transition group">
-                    <div class="bg-gray-200 h-48 flex items-center justify-center text-gray-400 group-hover:scale-105 transition duration-300">
-                        <span class="text-sm">📷 [Foto Penanaman Pohon]</span>
-                    </div>
-                    <div class="p-4 bg-white relative z-10">
-                        <span class="text-xs text-blue-600 font-semibold">28 Agustus 2026</span>
-                        <h4 class="font-bold text-gray-800 mt-1">Penanaman Pohon Mangga</h4>
-                        <p class="text-gray-500 text-xs mt-1">Simbolis penanaman bibit pohon di halaman balai desa.</p>
-                    </div>
-                </div>
-
-                <div class="w-[85vw] sm:w-[45vw] md:w-[calc(33.333%-16px)] flex-shrink-0 snap-start bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-md transition group">
-                    <div class="bg-gray-200 h-48 flex items-center justify-center text-gray-400 group-hover:scale-105 transition duration-300">
-                        <span class="text-sm">📷 [Foto Perpisahan]</span>
-                    </div>
-                    <div class="p-4 bg-white relative z-10">
-                        <span class="text-xs text-blue-600 font-semibold">30 Agustus 2026</span>
-                        <h4 class="font-bold text-gray-800 mt-1">Malam Perpisahan</h4>
-                        <p class="text-gray-500 text-xs mt-1">Acara ramah tamah dan perpisahan dengan warga dusun 1.</p>
-                    </div>
-                </div>
-
-            </div>
         </section>
 
         <section class="bg-white p-6 md:p-8 rounded-xl border border-gray-100 shadow-sm">
@@ -267,20 +106,62 @@
     <div id="footer-container"></div>
 
     <script>
-        // Script untuk tombol geser Kiri-Kanan pada Slider
+        document.addEventListener("DOMContentLoaded", () => {
+            // Fetch Program Kerja dari proker.json
+            fetch('./src/data/proker.json')
+                .then(res => res.json())
+                .then(prokerData => {
+                    const prokerSlider = document.getElementById('proker-slider');
+                    prokerSlider.innerHTML = '';
+                    prokerData.forEach(item => {
+                        prokerSlider.innerHTML += `
+                            <div onclick="window.location.href='proker-detail.html?id=${item.id}'" class="w-[85vw] sm:w-[45vw] md:w-[calc(33.333%-16px)] flex-shrink-0 snap-start bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition cursor-pointer">
+                                <div class="w-12 h-12 ${item.warna} rounded-lg flex items-center justify-center font-bold text-xl mb-4">${item.ikon}</div>
+                                <h3 class="font-bold text-gray-800 text-lg mb-2">${item.judul}</h3>
+                                <p class="text-gray-600 text-sm leading-relaxed line-clamp-2">${item.singkat}</p>
+                                <span class="text-xs text-blue-600 font-semibold mt-4 inline-block">Baca Selengkapnya →</span>
+                            </div>
+                        `;
+                    });
+                })
+                .catch(err => console.error('Gagal memuat proker.json:', err));
+
+            // Fetch Galeri Dokumentasi dari galeri.json
+            fetch('./src/data/galeri.json')
+                .then(res => res.json())
+                .then(galeriData => {
+                    const galeriSlider = document.getElementById('galeri-slider');
+                    galeriSlider.innerHTML = '';
+                    galeriData.forEach(item => {
+                        galeriSlider.innerHTML += `
+                            <div onclick="window.location.href='galeri-detail.html?id=${item.id}'" class="w-[85vw] sm:w-[45vw] md:w-[calc(33.333%-16px)] flex-shrink-0 snap-start bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-md transition group cursor-pointer">
+                                <div class="bg-gray-200 h-48 flex items-center justify-center text-gray-400 group-hover:scale-105 transition duration-300 overflow-hidden">
+                                    <img src="${item.gambar}" alt="${item.judul}" class="w-full h-full object-cover" onerror="this.parentElement.innerHTML='<span class=\\'text-sm\\'>📷 ${item.judul}</span>'">
+                                </div>
+                                <div class="p-4 bg-white relative z-10">
+                                    <span class="text-xs text-blue-600 font-semibold">${item.tanggal}</span>
+                                    <h4 class="font-bold text-gray-800 mt-1">${item.judul}</h4>
+                                    <p class="text-gray-500 text-xs mt-1 line-clamp-2">${item.deskripsi}</p>
+                                </div>
+                            </div>
+                        `;
+                    });
+                })
+                .catch(err => console.error('Gagal memuat galeri.json:', err));
+        });
+
         function slide(sliderId, direction) {
             const slider = document.getElementById(sliderId);
-            // Mendapatkan lebar satu item (scroll sejauh 1 item/kartu)
             const scrollAmount = slider.offsetWidth > 768 ? slider.offsetWidth / 3 : slider.offsetWidth;
             slider.scrollBy({ left: scrollAmount * direction, behavior: 'smooth' });
         }
     </script>
 
     <script type="module">
-        import { renderHeader, initHeaderEvents } from '../src/components/Header.js';
-        import { renderFooter } from '../src/components/Footer.js';
+        import { renderHeader, initHeaderEvents } from './src/components/Header.js';
+        import { renderFooter } from './src/components/Footer.js';
 
-        // Panggil renderHeader dengan parameter 'kkn' agar menu Galeri KKN aktif
+        // Mengirimkan parameter 'galeri-kkn' atau 'kkn' sesuai identifier di Header component agar menu terkait aktif
         document.getElementById('header-container').innerHTML = renderHeader('kkn');
         document.getElementById('footer-container').innerHTML = renderFooter();
         initHeaderEvents();

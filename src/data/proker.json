@@ -1,0 +1,45 @@
+[
+  {
+    "id": "digitalisasi-arsip",
+    "judul": "Digitalisasi Arsip Desa",
+    "ikon": "💻",
+    "warna": "bg-blue-100 text-blue-600",
+    "singkat": "Pengembangan website statis berbasis Client-Side MVC dan Vercel untuk mempermudah pencarian berkas dan surat-surat publik desa.",
+    "tanggal": "10 - 15 Agustus 2026",
+    "pelaksana": "Tim Divisi IT & Web KKN UINSU",
+    "deskripsi": "Program ini bertujuan untuk mentransformasikan sistem kearsipan konvensional di Kantor Kepala Desa Manik Maraja menjadi arsip digital yang terstruktur, aman, dan mudah diakses.",
+    "foto": [
+      "./assets/img/proker-arsip-1.png",
+      "./assets/img/proker-arsip-2.png"
+    ],
+    "video": "https://www.youtube.com/embed/dQw4w9WgXcQ"
+  },
+  {
+    "id": "pemberdayaan-umkm",
+    "judul": "Pemberdayaan UMKM",
+    "ikon": "🛒",
+    "warna": "bg-green-100 text-green-600",
+    "singkat": "Pendataan dan publikasi potensi usaha lokal warga desa agar lebih dikenal oleh masyarakat luas melalui platform digital.",
+    "tanggal": "12 - 20 Agustus 2026",
+    "pelaksana": "Tim Divisi Ekonomi Kreatif & UMKM",
+    "deskripsi": "Melakukan pendataan langsung ke pelaku usaha kecil di Desa Manik Maraja seperti Masif Es Kristal, Mie Balap Bang Doyok, dan Jahit Henri Sampurno.",
+    "foto": [
+      "./assets/img/proker-umkm-1.png"
+    ],
+    "video": ""
+  },
+  {
+    "id": "bimbingan-belajar",
+    "judul": "Bimbingan Belajar Gratis",
+    "ikon": "📚",
+    "warna": "bg-indigo-100 text-indigo-600",
+    "singkat": "Membuka kelas bimbingan belajar gratis setelah jam sekolah untuk anak-anak SD di sekitar balai desa.",
+    "tanggal": "Setiap Hari Selama KKN",
+    "pelaksana": "Tim Divisi Pendidikan",
+    "deskripsi": "Memberikan pendampingan belajar mata pelajaran sekolah dasar serta kegiatan edukatif kreatif bagi anak-anak Dusun 1.",
+    "foto": [
+      "./assets/img/bimbel-1.png"
+    ],
+    "video": ""
+  }
+]

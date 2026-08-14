@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Program Kerja - Desa Manik Maraja</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 flex flex-col min-h-screen">
+    <div id="header-container"></div>
+
+    <main class="max-w-4xl mx-auto px-4 py-8 flex-grow w-full">
+        <div class="mb-6">
+            <a href="galeri-kkn.html" class="inline-flex items-center text-sm font-semibold text-blue-600 hover:text-blue-800 transition bg-blue-50 px-4 py-2 rounded-lg border border-blue-100">
+                ← Kembali ke Galeri KKN
+            </a>
+        </div>
+
+        <div id="detail-content" class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 md:p-8">
+            <div class="text-center py-12 text-gray-500">
+                <p class="animate-pulse">Memuat data program kerja...</p>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-container"></div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const prokerId = urlParams.get('id');
+            const container = document.getElementById('detail-content');
+
+            if (!prokerId) {
+                container.innerHTML = `
+                    <div class="text-center py-12">
+                        <h3 class="text-xl font-bold text-gray-700">Program Kerja Tidak Ditemukan</h3>
+                        <p class="text-gray-500 text-sm mt-2">ID program kerja tidak valid atau tidak tercantum.</p>
+                        <a href="galeri-kkn.html" class="inline-block mt-4 text-sm text-blue-600 font-semibold">← Kembali</a>
+                    </div>
+                `;
+                return;
+            }
+
+            fetch('./src/data/proker.json')
+                .then(res => res.json())
+                .then(data => {
+                    const item = data.find(p => p.id === prokerId);
+                    if (!item) {
+                        container.innerHTML = `
+                            <div class="text-center py-12">
+                                <h3 class="text-xl font-bold text-gray-700">Program Kerja Tidak Ditemukan</h3>
+                                <p class="text-gray-500 text-sm mt-2">Data dengan ID "${prokerId}" tidak ada dalam sistem.</p>
+                                <a href="galeri-kkn.html" class="inline-block mt-4 text-sm text-blue-600 font-semibold">← Kembali</a>
+                            </div>
+                        `;
+                        return;
+                    }
+
+                    // Render Foto Grid
+                    let fotoHtml = '';
+                    if (item.foto && item.foto.length > 0) {
+                        fotoHtml = `
+                            <div class="mt-8 border-t pt-6">
+                                <h3 class="text-lg font-bold text-gray-800 mb-4">📸 Dokumentasi Foto</h3>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    ${item.foto.map(f => `
+                                        <div class="rounded-xl overflow-hidden border border-gray-200 bg-gray-100 h-56">
+                                            <img src="${f}" alt="${item.judul}" class="w-full h-full object-cover" onerror="this.parentElement.innerHTML='<div class=\\'flex items-center justify-center h-full text-gray-400 text-sm\\'>Gambar tidak ditemukan</div>'">
+                                        </div>
+                                    `).join('')}
+                                </div>
+                            </div>
+                        `;
+                    }
+
+                    // Render Video Youtube Embed (Jika ada)
+                    let videoHtml = '';
+                    if (item.video) {
+                        videoHtml = `
+                            <div class="mt-8 border-t pt-6">
+                                <h3 class="text-lg font-bold text-gray-800 mb-4">🎥 Dokumentasi Video</h3>
+                                <div class="aspect-video w-full rounded-xl overflow-hidden border border-gray-200 shadow-sm">
+                                    <iframe class="w-full h-full" src="${item.video}" title="${item.judul}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        `;
+                    }
+
+                    // Render Konten Utama
+                    container.innerHTML = `
+                        <div class="flex items-center gap-4 border-b pb-6 mb-6">
+                            <div class="w-16 h-16 ${item.warna || 'bg-blue-100 text-blue-600'} rounded-2xl flex items-center justify-center text-3xl font-bold flex-shrink-0">
+                                ${item.ikon || '📌'}
+                            </div>
+                            <div>
+                                <h1 class="text-2xl md:text-3xl font-bold text-gray-800">${item.judul}</h1>
+                                <div class="flex flex-wrap items-center gap-3 mt-2 text-xs text-gray-500">
+                                    <span class="bg-gray-100 text-gray-700 px-2.5 py-1 rounded-full font-medium">🗓️ ${item.tanggal}</span>
+                                    <span class="bg-blue-50 text-blue-700 px-2.5 py-1 rounded-full font-medium">👤 ${item.pelaksana}</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="prose max-w-none text-gray-700 leading-relaxed">
+                            <h3 class="text-lg font-bold text-gray-800 mb-2">Deskripsi Program</h3>
+                            <p class="whitespace-pre-line text-sm md:text-base">${item.deskripsi}</p>
+                        </div>
+
+                        ${fotoHtml}
+                        ${videoHtml}
+                    `;
+                })
+                .catch(err => {
+                    console.error(err);
+                    container.innerHTML = `<div class="text-center py-10 text-red-500 text-sm">Gagal memuat data program kerja.</div>`;
+                });
+        });
+    </script>
+
+    <script type="module">
+        import { renderHeader, initHeaderEvents } from './src/components/Header.js';
+        import { renderFooter } from './src/components/Footer.js';
+
+        document.getElementById('header-container').innerHTML = renderHeader('kkn');
+        document.getElementById('footer-container').innerHTML = renderFooter();
+        initHeaderEvents();
+    </script>
+</body>
+</html>

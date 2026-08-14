@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeri Dokumentasi KKN - Desa Manik Maraja</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 flex flex-col min-h-screen">
+    <div id="header-container"></div>
+
+    <main class="max-w-6xl mx-auto px-4 py-8 flex-grow w-full">
+        <div class="mb-6">
+            <a href="galeri-kkn.html" class="inline-flex items-center text-sm font-semibold text-blue-600 hover:text-blue-800 transition bg-blue-50 px-4 py-2 rounded-lg border border-blue-100">
+                ← Kembali ke Galeri KKN
+            </a>
+        </div>
+
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8 border-b pb-6">
+            <div>
+                <h1 class="text-3xl font-bold text-gray-800">📸 Galeri Dokumentasi Kegiatan</h1>
+                <p class="text-gray-600 mt-1 text-sm">Arsip foto dan dokumentasi rangkaian acara KKN di Desa Manik Maraja.</p>
+            </div>
+            <div class="w-full md:w-72">
+                <input type="text" id="search-input" placeholder="Cari foto / kegiatan..." class="w-full px-4 py-2 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm shadow-sm">
+            </div>
+        </div>
+
+        <div id="galeri-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="col-span-full text-center py-12 text-gray-500 animate-pulse">
+                Memuat foto dokumentasi...
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-container"></div>
+
+    <script>
+        let allGaleri = [];
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const grid = document.getElementById('galeri-grid');
+            const searchInput = document.getElementById('search-input');
+
+            // Fetch data dari galeri.json
+            fetch('./src/data/galeri.json')
+                .then(res => res.json())
+                .then(data => {
+                    allGaleri = data;
+                    renderGaleri(allGaleri);
+                })
+                .catch(err => {
+                    console.error(err);
+                    grid.innerHTML = `<div class="col-span-full text-center py-12 text-red-500">Gagal memuat galeri dokumentasi.</div>`;
+                });
+
+            // Event listener pencarian
+            searchInput.addEventListener('input', (e) => {
+                const query = e.target.value.toLowerCase();
+                const filtered = allGaleri.filter(item => 
+                    item.judul.toLowerCase().includes(query) || 
+                    item.deskripsi.toLowerCase().includes(query) ||
+                    (item.kategori && item.kategori.toLowerCase().includes(query))
+                );
+                renderGaleri(filtered);
+            });
+        });
+
+        function renderGaleri(items) {
+            const grid = document.getElementById('galeri-grid');
+            if (items.length === 0) {
+                grid.innerHTML = `
+                    <div class="col-span-full text-center py-12 text-gray-500">
+                        <p class="text-lg font-semibold">Tidak ada foto kegiatan yang cocok.</p>
+                        <p class="text-sm mt-1">Coba kata kunci pencarian yang lain.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            grid.innerHTML = items.map(item => `
+                <div onclick="window.location.href='galeri-detail.html?id=${item.id}'" class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-md transition cursor-pointer group flex flex-col justify-between">
+                    <div>
+                        <div class="bg-gray-100 h-52 overflow-hidden relative">
+                            <img src="${item.gambar}" alt="${item.judul}" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" onerror="this.parentElement.innerHTML='<div class=\\'flex items-center justify-center h-full text-gray-400 text-sm\\'>📷 ${item.judul}</div>'">
+                            ${item.kategori ? `<span class="absolute top-3 left-3 bg-white/90 backdrop-blur-sm text-blue-700 text-xs px-2.5 py-1 rounded-full font-semibold shadow-sm">${item.kategori}</span>` : ''}
+                        </div>
+                        <div class="p-5">
+                            <span class="text-xs text-blue-600 font-medium">🗓️ ${item.tanggal}</span>
+                            <h3 class="font-bold text-gray-800 text-lg mt-1 group-hover:text-blue-600 transition">${item.judul}</h3>
+                            <p class="text-gray-500 text-xs mt-2 leading-relaxed line-clamp-2">${item.deskripsi}</p>
+                        </div>
+                    </div>
+                    <div class="px-5 pb-4 text-right">
+                        <span class="text-xs text-blue-600 font-semibold group-hover:translate-x-1 transition transform inline-block">Lihat foto penuh →</span>
+                    </div>
+                </div>
+            `).join('');
+        }
+    </script>
+
+    <script type="module">
+        import { renderHeader, initHeaderEvents } from './src/components/Header.js';
+        import { renderFooter } from './src/components/Footer.js';
+
+        document.getElementById('header-container').innerHTML = renderHeader('kkn');
+        document.getElementById('footer-container').innerHTML = renderFooter();
+        initHeaderEvents();
+    </script>
+</body>
+</html>
