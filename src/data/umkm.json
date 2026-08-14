@@ -1,0 +1,38 @@
+[
+  {
+    "id": "masif-es",
+    "namaUsaha": "Masif Es Kristal",
+    "kategori": "Kuliner / Olahan",
+    "namaPenjual": "Bapak Masif",
+    "nomorHp": "6285177315723",
+    "nomorWa": "6285177315723",
+    "deskripsi": "Penyedia es kristal higienis untuk kebutuhan rumah tangga maupun acara.",
+    "gambar": "./assets/img/masif es kristal.png",
+    "gmapsEmbed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3984.840260660189!2d98.91520847474246!3d2.8624392971142134!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x303197adfe485131%3A0xbd8203b34ad6c13b!2sMasif%20Es%20Kristal!5e0!3m2!1sid!2sid!4v1786707066326!5m2!1sid!2sid",
+    "gmapsLink": "https://maps.app.goo.gl/ez5Uz3mvBkpaKfF19"
+  },
+  {
+    "id": "mie-balap",
+    "namaUsaha": "Mie Balap Bang Doyok",
+    "kategori": "Kuliner",
+    "namaPenjual": "Bang Doyok",
+    "nomorHp": "6282198765432",
+    "nomorWa": "6282198765432",
+    "deskripsi": "Mie balap khas Medan yang lezat dan gurih dengan porsi memuaskan.",
+    "gambar": "./assets/img/mie-balap.png",
+    "gmapsEmbed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3984.something!2d...",
+    "gmapsLink": "https://maps.google.com/?q=Mie+Balap+Bang+Doyok"
+  },
+  {
+    "id": "jahit-henri",
+    "namaUsaha": "Jahit Henri Sampurno",
+    "kategori": "Jasa & Konveksi",
+    "namaPenjual": "Henri Sampurno",
+    "nomorHp": "081311223344",
+    "nomorWa": "6281311223344",
+    "deskripsi": "Jasa jahit pakaian harian, seragam, dan perbaikan busana rapi berkualitas.",
+    "gambar": "./assets/img/penjahit.png",
+    "gmapsEmbed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3984.something!2d...",
+    "gmapsLink": "https://maps.google.com/?q=Jahit+Henri+Sampurno"
+  }
+]   
