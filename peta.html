@@ -1,45 +1,91 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Peta Wilayah - Desa Manik Maraja</title>
+    <title>UMKM Desa - Manik Maraja</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-50 flex flex-col min-h-screen">
+<body class="bg-abu text-gelap flex flex-col min-h-screen relative">
+    <!-- Header dari module -->
     <div id="header-container"></div>
 
-    <main class="max-w-5xl mx-auto px-4 py-8 flex-grow w-full">
-        <div class="bg-white p-6 md:p-8 rounded-xl shadow-sm border border-gray-100">
-            <h1 class="text-3xl font-bold text-gray-800 mb-2">Peta Lokasi & Wilayah Desa</h1>
-            <p class="text-gray-600 mb-6">Peta interaktif wilayah Desa Manik Maraja, Kec. Sidamanik, Kab. Simalungun.</p>
+    <main class="max-w-6xl mx-auto px-4 py-10 flex-grow w-full">
+
+        <!-- Judul Section -->
+        <div class="pl-4 border-l-4 border-utama-500 mb-8 mt-4">
+            <h2 class="text-3xl font-extrabold text-gelap">Pemetaan Digital</h2>
+            <p class="text-gray-500 mt-2 font-medium">Visualisasi wilayah dan pusat pemerintahan dusun.</p>
+        </div>
+
+        <!-- KONTEN PETA -->
+        <div class="grid grid-cols-1 gap-10 mb-12">
             
-            <div class="w-full h-96 md:h-[500px] rounded-lg overflow-hidden border border-gray-200 shadow-inner">
-                <iframe 
-                    class="w-full h-full border-0"
-                    src="https://maps.google.com/maps?q=Desa%20Manik%20Maraja,%20Sidamanik,%20Simalungun&t=&z=14&ie=UTF8&iwloc=&output=embed" 
-                    allowfullscreen="" 
-                    loading="lazy" 
-                    referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
+            <!-- Peta 1: Wilayah Desa -->
+            <div class="bg-white rounded-3xl p-6 md:p-8 border border-gray-200 hover:border-utama-500 hover:shadow-xl hover:shadow-utama-500/10 transition-all duration-300 flex flex-col">
+                <div class="flex items-center gap-3 mb-5">
+                    <div class="w-12 h-12 rounded-xl bg-utama-50 text-utama-500 flex items-center justify-center text-2xl">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-extrabold text-gelap">Peta Wilayah Manik Maraja</h3>
+                        <p class="text-sm text-gray-500 font-medium">Batas geografis dan area sekitar desa.</p>
+                    </div>
+                </div>
+
+                <div class="w-full h-96 md:h-[450px] rounded-2xl overflow-hidden border border-gray-200 shadow-inner relative group">
+                    <div class="absolute inset-0 bg-utama-500/5 pointer-events-none group-hover:bg-transparent transition-colors duration-300"></div>
+                    <iframe 
+                        class="w-full h-full border-0 filter saturate-[1.05]"
+                        src="https://maps.google.com/maps?q=Desa%20Manik%20Maraja,%20Sidamanik,%20Simalungun&t=&z=14&ie=UTF8&iwloc=&output=embed" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
             </div>
-            <div class="w-full h-96 md:h-[500px] rounded-lg overflow-hidden border border-gray-200 shadow-inner">
-                <iframe 
-                    class="w-full h-full border-0"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3984.8267547556597!2d98.91275849651697!3d2.8663204980055426!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x303197002fe5fce7%3A0x90b5f13fe990f044!2sKantor%20Pangulu%20Nagori%20Manik%20Maraja!5e0!3m2!1sid!2sid!4v1786704706644!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"                    allowfullscreen="" 
-                    loading="lazy" 
-                    referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
+
+            <!-- Peta 2: Kantor Pangulu (Balai Desa) -->
+            <div class="bg-white rounded-3xl p-6 md:p-8 border border-gray-200 hover:border-utama-500 hover:shadow-xl hover:shadow-utama-500/10 transition-all duration-300 flex flex-col">
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-5">
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 rounded-xl bg-utama-50 text-utama-500 flex items-center justify-center text-2xl">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-extrabold text-gelap">Lokasi Kantor Pangulu</h3>
+                            <p class="text-sm text-gray-500 font-medium">Pusat pelayanan administrasi dan balai pertemuan.</p>
+                        </div>
+                    </div>
+                    <!-- Tombol Cepat Arahkan ke Google Maps App -->
+                    <a href="https://maps.google.com/?q=Kantor+Pangulu+Nagori+Manik+Maraja" target="_blank" class="inline-flex items-center justify-center bg-utama-50 text-utama-600 hover:bg-utama-500 hover:text-white px-4 py-2 rounded-xl text-sm font-bold transition-colors">
+                        Buka di Aplikasi Maps
+                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </a>
+                </div>
+
+                <div class="w-full h-96 md:h-[450px] rounded-2xl overflow-hidden border border-gray-200 shadow-inner relative group">
+                    <div class="absolute inset-0 bg-utama-500/5 pointer-events-none group-hover:bg-transparent transition-colors duration-300"></div>
+                    <iframe 
+                        class="w-full h-full border-0"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3984.8267547556597!2d98.91275849651697!3d2.8663204980055426!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x303197002fe5fce7%3A0x90b5f13fe990f044!2sKantor%20Pangulu%20Nagori%20Manik%20Maraja!5e0!3m2!1sid!2sid!4v1786704706644!5m2!1sid!2sid" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
             </div>
+
         </div>
     </main>
 
     <div id="footer-container"></div>
 
     <script type="module">
-        import { renderHeader, initHeaderEvents } from '../src/components/Header.js';
-        import { renderFooter } from '../src/components/Footer.js';
+        import { renderHeader, initHeaderEvents } from './src/components/Header.js';
+        import { renderFooter } from './src/components/Footer.js';
 
+        // Panggil renderHeader dengan parameter 'peta' agar menu Peta aktif/highlight
         document.getElementById('header-container').innerHTML = renderHeader('peta');
         document.getElementById('footer-container').innerHTML = renderFooter();
         initHeaderEvents();
